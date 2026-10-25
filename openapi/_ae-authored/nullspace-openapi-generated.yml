@@ -1,0 +1,734 @@
+openapi: 3.1.0
+info:
+  title: Nullspace API
+  version: '2026-10-24'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-24: 20 operation(s) read from 24 public documentation page(s) (each
+    operation names its page in x-source). This is not the provider''s published contract; Nullspace has published no machine-readable contract
+    that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 24
+    documentation: -4
+    pages-with-code: 24
+    pages-read: 24
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-24'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.ns.rocks/api-reference/git/list-branches
+  - https://docs.ns.rocks/api-reference/git/stage-changes
+  - https://docs.ns.rocks/api-reference/git/commit-history
+  - https://docs.ns.rocks/api-reference/git/create-a-commit
+  - https://docs.ns.rocks/api-reference/git/push-to-a-remote
+  - https://docs.ns.rocks/api-reference/pty/list-pty-sessions
+  - https://docs.ns.rocks/api-reference/git/pull-from-a-remote
+  - https://docs.ns.rocks/api-reference/pty/kill-a-pty-session
+  - https://docs.ns.rocks/api-reference/code/delete-an-artifact
+  - https://docs.ns.rocks/api-reference/code/get-async-code-run
+  - https://docs.ns.rocks/api-reference/files/get-file-metadata
+  - https://docs.ns.rocks/api-reference/machines/list-snapshots
+  - https://docs.ns.rocks/api-reference/desktop/type-text-string
+  - https://docs.ns.rocks/api-reference/files/read-file-contents
+  - https://docs.ns.rocks/api-reference/pty/get-pty-session-info
+  - https://docs.ns.rocks/api-reference/pty/resize-a-pty-session
+  - https://docs.ns.rocks/api-reference/code/list-async-code-runs
+  - https://docs.ns.rocks/api-reference/code/list-kernel-contexts
+  - https://docs.ns.rocks/api-reference/api-keys/revoke-an-api-key
+  - https://docs.ns.rocks/api-reference/api-keys/rotate-an-api-key
+  - https://docs.ns.rocks/api-reference/code/cancel-async-code-run
+  - https://docs.ns.rocks/api-reference/code/get-artifact-metadata
+  - https://docs.ns.rocks/api-reference/desktop/press-a-single-key
+  - https://docs.ns.rocks/api-reference/files/set-file-permissions
+servers:
+- url: https://api.13-215-85-171.sslip.io
+paths:
+  /v1/keys/{id}:
+    delete:
+      operationId: delete_v1_keys_id
+      tags:
+      - Keys
+      summary: DELETE /v1/keys/{id}
+      x-source: https://docs.ns.rocks/api-reference/api-keys/revoke-an-api-key
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteV1KeysIdResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request DELETE  --url https://api.13-215-85-171.sslip.io/v1/keys/{id}  --header 'Authorization: Bearer <token>' 200 401\
+          \ 403 404 503 {\n \"success\": true\n} {\n \"error\": \"Missing or invalid bearer credential\",\n \"code\": \"unauthorized\",\n \"request_id\"\
+          : \"req_123\"\n} {\n \"error\": \"Verify your email before using self-serve API routes\",\n \"code\": \"email_not_verified\",\n \"request_id\"\
+          : \"req_123\"\n} {\n \"error\""
+  /v1/keys/{id}/rotate:
+    post:
+      operationId: post_v1_keys_id_rotate
+      tags:
+      - Keys
+      summary: POST /v1/keys/{id}/rotate
+      x-source: https://docs.ns.rocks/api-reference/api-keys/rotate-an-api-key
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1KeysIdRotateResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request POST  --url https://api.13-215-85-171.sslip.io/v1/keys/{id}/rotate  --header 'Authorization: Bearer <token>'\
+          \  --header 'Content-Type: application/json'  --data '\n{\n \"name\": \"<string>\",\n \"scope\": \"<string>\"\n}\n' 201 401 403 404\
+          \ 503 {\n \"id\": \"3c90c3cc-0d44-4b50-8888-8dd25736052a\",\n \"key\": \"ns_live_a1b2c3d4e5f67890a1b2c3d4e5f67890\",\n \"prefix\": \"\
+          ns_live_a1b2\",\n \"name\": \"<string>\",\n \"scop"
+  /v1/machines/{id}/code/contexts:
+    get:
+      operationId: get_v1_machines_id_code_contexts
+      tags:
+      - Machines
+      summary: GET /v1/machines/{id}/code/contexts
+      x-source: https://docs.ns.rocks/api-reference/code/list-kernel-contexts
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1MachinesIdCodeContextsResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request GET  --url https://api.13-215-85-171.sslip.io/v1/machines/{id}/code/contexts  --header 'Authorization: Bearer\
+          \ <token>' 200 404 [\n {\n \"id\": \"<string>\",\n \"language\": \"<string>\",\n \"cwd\": \"<string>\"\n }\n] {\n \"error\": \"<string>\"\
+          ,\n \"code\": \"invalid_request\",\n \"error_detail\": {\n \"code\": \"unauthorized\",\n \"message\": \"<string>\",\n \"phase\": \"\
+          auth\",\n \"retryable\": true,\n \"suggested_action\": \"<stri"
+  /v1/machines/{id}/code/runs:
+    get:
+      operationId: get_v1_machines_id_code_runs
+      tags:
+      - Machines
+      summary: GET /v1/machines/{id}/code/runs
+      x-source: https://docs.ns.rocks/api-reference/code/list-async-code-runs
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request GET  --url https://api.13-215-85-171.sslip.io/v1/machines/{id}/code/runs  --header 'Authorization: Bearer <token>'\
+          \ 200 404 503 {\n \"items\": [\n {\n \"id\": \"<string>\",\n \"machine_id\": \"<string>\",\n \"context_id\": \"<string>\",\n \"status\"\
+          : \"queued\",\n \"timeout_secs\": 123,\n \"created_at\": \"2023-11-07T05:31:56Z\",\n \"expires_at\": \"2023-11-07T05:31:56Z\",\n \"\
+          started_at\": \"2023-11-07T05:31:56Z\",\n \"comple"
+  /v1/machines/{id}/desktop/key:
+    post:
+      operationId: post_v1_machines_id_desktop_key
+      tags:
+      - Machines
+      summary: POST /v1/machines/{id}/desktop/key
+      x-source: https://docs.ns.rocks/api-reference/desktop/press-a-single-key
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request POST  --url https://api.13-215-85-171.sslip.io/v1/machines/{id}/desktop/key  --header 'Authorization: Bearer\
+          \ <token>'  --header 'Content-Type: application/json'  --data '\n{\n \"key\": \"<string>\"\n}\n' Desktop Press a single key Copy page\
+          \ Copy page Copy page Copy page POST https://api.13-215-85-171.sslip.io https://nullspace.example http://localhost http://localhost:3000\
+          \ / v1 / machines /"
+  /v1/machines/{id}/desktop/type:
+    post:
+      operationId: post_v1_machines_id_desktop_type
+      tags:
+      - Machines
+      summary: POST /v1/machines/{id}/desktop/type
+      x-source: https://docs.ns.rocks/api-reference/desktop/type-text-string
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request POST  --url https://api.13-215-85-171.sslip.io/v1/machines/{id}/desktop/type  --header 'Authorization: Bearer\
+          \ <token>'  --header 'Content-Type: application/json'  --data '\n{\n \"text\": \"<string>\"\n}\n' Desktop Type text string Copy page\
+          \ Copy page Copy page Copy page POST https://api.13-215-85-171.sslip.io https://nullspace.example http://localhost http://localhost:3000\
+          \ / v1 / machines /"
+  /v1/machines/{id}/files/info:
+    post:
+      operationId: post_v1_machines_id_files_info
+      tags:
+      - Machines
+      summary: POST /v1/machines/{id}/files/info
+      x-source: https://docs.ns.rocks/api-reference/files/get-file-metadata
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1MachinesIdFilesInfoResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request POST  --url https://api.13-215-85-171.sslip.io/v1/machines/{id}/files/info  --header 'Authorization: Bearer <token>'\
+          \  --header 'Content-Type: application/json'  --data '\n{\n \"path\": \"<string>\"\n}\n' 200 {\n \"name\": \"<string>\",\n \"path\"\
+          : \"<string>\",\n \"is_dir\": true,\n \"size\": 123,\n \"type\": \"file\",\n \"mode\": \"0644\",\n \"permissions\": \"0644\",\n \"owner\"\
+          : \"<string>\",\n \"group\": \"<string>\",\n \"modifi"
+  /v1/machines/{id}/files/permissions:
+    post:
+      operationId: post_v1_machines_id_files_permissions
+      tags:
+      - Machines
+      summary: POST /v1/machines/{id}/files/permissions
+      x-source: https://docs.ns.rocks/api-reference/files/set-file-permissions
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request POST  --url https://api.13-215-85-171.sslip.io/v1/machines/{id}/files/permissions  --header 'Authorization: Bearer\
+          \ <token>'  --header 'Content-Type: application/json'  --data '\n{\n \"path\": \"<string>\",\n \"permissions\": \"0755\"\n}\n' Files\
+          \ Set file permissions Copy page Copy page Copy page Copy page POST https://api.13-215-85-171.sslip.io https://nullspace.example http://localhost\
+          \ http://l"
+  /v1/machines/{id}/files/read:
+    post:
+      operationId: post_v1_machines_id_files_read
+      tags:
+      - Machines
+      summary: POST /v1/machines/{id}/files/read
+      x-source: https://docs.ns.rocks/api-reference/files/read-file-contents
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1MachinesIdFilesReadResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request POST  --url https://api.13-215-85-171.sslip.io/v1/machines/{id}/files/read  --header 'Authorization: Bearer <token>'\
+          \  --header 'Content-Type: application/json'  --data '\n{\n \"path\": \"<string>\"\n}\n' 200 {\n \"content\": \"<string>\",\n \"encoding\"\
+          : \"<string>\",\n \"size\": 123\n} Files Read file contents Copy page Copy page Copy page Copy page POST https://api.13-215-85-171.sslip.io\
+          \ https://nullsp"
+  /v1/machines/{id}/git/add:
+    post:
+      operationId: post_v1_machines_id_git_add
+      tags:
+      - Machines
+      summary: POST /v1/machines/{id}/git/add
+      x-source: https://docs.ns.rocks/api-reference/git/stage-changes
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1MachinesIdGitAddResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request POST  --url https://api.13-215-85-171.sslip.io/v1/machines/{id}/git/add  --header 'Authorization: Bearer <token>'\
+          \  --header 'Content-Type: application/json'  --data '\n{\n \"path\": \"<string>\"\n}\n' 200 {\n \"ok\": true\n} Git Stage changes Copy\
+          \ page Copy page Copy page Copy page POST https://api.13-215-85-171.sslip.io https://nullspace.example http://localhost http://localhost:3000\
+          \ / v1 / ma"
+  /v1/machines/{id}/git/branch:
+    get:
+      operationId: get_v1_machines_id_git_branch
+      tags:
+      - Machines
+      summary: GET /v1/machines/{id}/git/branch
+      x-source: https://docs.ns.rocks/api-reference/git/list-branches
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1MachinesIdGitBranchResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request GET  --url https://api.13-215-85-171.sslip.io/v1/machines/{id}/git/branch  --header 'Authorization: Bearer <token>'\
+          \ 200 {\n \"branches\": [\n \"<string>\"\n ],\n \"current\": \"<string>\"\n} Git List branches Copy page Copy page Copy page Copy page\
+          \ GET https://api.13-215-85-171.sslip.io https://nullspace.example http://localhost http://localhost:3000 / v1 / machines / {id} / git\
+          \ / branch Try it "
+  /v1/machines/{id}/git/commit:
+    post:
+      operationId: post_v1_machines_id_git_commit
+      tags:
+      - Machines
+      summary: POST /v1/machines/{id}/git/commit
+      x-source: https://docs.ns.rocks/api-reference/git/create-a-commit
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1MachinesIdGitCommitResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request POST  --url https://api.13-215-85-171.sslip.io/v1/machines/{id}/git/commit  --header 'Authorization: Bearer <token>'\
+          \  --header 'Content-Type: application/json'  --data '\n{\n \"path\": \"<string>\",\n \"message\": \"<string>\"\n}\n' 200 {\n \"sha\"\
+          : \"<string>\"\n} Git Create a commit Copy page Copy page Copy page Copy page POST https://api.13-215-85-171.sslip.io https://nullspace.example\
+          \ http://local"
+  /v1/machines/{id}/git/log:
+    get:
+      operationId: get_v1_machines_id_git_log
+      tags:
+      - Machines
+      summary: GET /v1/machines/{id}/git/log
+      x-source: https://docs.ns.rocks/api-reference/git/commit-history
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1MachinesIdGitLogResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request GET  --url https://api.13-215-85-171.sslip.io/v1/machines/{id}/git/log  --header 'Authorization: Bearer <token>'\
+          \ 200 {\n \"commits\": [\n {\n \"sha\": \"<string>\",\n \"author_name\": \"<string>\",\n \"author_email\": \"<string>\",\n \"date\"\
+          : \"<string>\",\n \"message\": \"<string>\"\n }\n ]\n} Git Commit history Copy page Copy page Copy page Copy page GET https://api.13-215-85-171.sslip.io\
+          \ https://nullspace.exam"
+  /v1/machines/{id}/git/pull:
+    post:
+      operationId: post_v1_machines_id_git_pull
+      tags:
+      - Machines
+      summary: POST /v1/machines/{id}/git/pull
+      x-source: https://docs.ns.rocks/api-reference/git/pull-from-a-remote
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1MachinesIdGitPullResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request POST  --url https://api.13-215-85-171.sslip.io/v1/machines/{id}/git/pull  --header 'Authorization: Bearer <token>'\
+          \  --header 'Content-Type: application/json'  --data '\n{\n \"path\": \"<string>\"\n}\n' 200 {\n \"summary\": \"<string>\"\n} Git Pull\
+          \ from a remote Copy page Copy page Copy page Copy page POST https://api.13-215-85-171.sslip.io https://nullspace.example http://localhost\
+          \ http://localho"
+  /v1/machines/{id}/git/push:
+    post:
+      operationId: post_v1_machines_id_git_push
+      tags:
+      - Machines
+      summary: POST /v1/machines/{id}/git/push
+      x-source: https://docs.ns.rocks/api-reference/git/push-to-a-remote
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1MachinesIdGitPushResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request POST  --url https://api.13-215-85-171.sslip.io/v1/machines/{id}/git/push  --header 'Authorization: Bearer <token>'\
+          \  --header 'Content-Type: application/json'  --data '\n{\n \"path\": \"<string>\"\n}\n' 200 {\n \"summary\": \"<string>\"\n} Git Push\
+          \ to a remote Copy page Copy page Copy page Copy page POST https://api.13-215-85-171.sslip.io https://nullspace.example http://localhost\
+          \ http://localhost"
+  /v1/machines/{id}/pty:
+    get:
+      operationId: get_v1_machines_id_pty
+      tags:
+      - Machines
+      summary: GET /v1/machines/{id}/pty
+      x-source: https://docs.ns.rocks/api-reference/pty/list-pty-sessions
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1MachinesIdPtyResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request GET  --url https://api.13-215-85-171.sslip.io/v1/machines/{id}/pty  --header 'Authorization: Bearer <token>'\
+          \ 200 501 [\n {\n \"session_id\": \"<string>\",\n \"pid\": 123,\n \"cols\": 2,\n \"rows\": 2,\n \"exec_id\": \"<string>\"\n }\n] {\n\
+          \ \"error\": \"<string>\",\n \"code\": \"invalid_request\",\n \"error_detail\": {\n \"code\": \"unauthorized\",\n \"message\": \"<string>\"\
+          ,\n \"phase\": \"auth\",\n \"retryable\": true,\n \"suggested_a"
+  /v1/machines/{id}/pty/{sid}:
+    delete:
+      operationId: delete_v1_machines_id_pty_sid
+      tags:
+      - Machines
+      summary: DELETE /v1/machines/{id}/pty/{sid}
+      x-source: https://docs.ns.rocks/api-reference/pty/kill-a-pty-session
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: sid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request DELETE  --url https://api.13-215-85-171.sslip.io/v1/machines/{id}/pty/{sid}  --header 'Authorization: Bearer\
+          \ <token>' 501 {\n \"error\": \"<string>\",\n \"code\": \"invalid_request\",\n \"error_detail\": {\n \"code\": \"unauthorized\",\n \"\
+          message\": \"<string>\",\n \"phase\": \"auth\",\n \"retryable\": true,\n \"suggested_action\": \"<string>\",\n \"step_index\": 123,\n\
+          \ \"attempt\": 123,\n \"max_attempts\": 123,\n \"cache_subje"
+    get:
+      operationId: get_v1_machines_id_pty_sid
+      tags:
+      - Machines
+      summary: GET /v1/machines/{id}/pty/{sid}
+      x-source: https://docs.ns.rocks/api-reference/pty/get-pty-session-info
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: sid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1MachinesIdPtySidResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request GET  --url https://api.13-215-85-171.sslip.io/v1/machines/{id}/pty/{sid}  --header 'Authorization: Bearer <token>'\
+          \ 200 501 {\n \"session_id\": \"<string>\",\n \"pid\": 123,\n \"cols\": 2,\n \"rows\": 2,\n \"exec_id\": \"<string>\"\n} {\n \"error\"\
+          : \"<string>\",\n \"code\": \"invalid_request\",\n \"error_detail\": {\n \"code\": \"unauthorized\",\n \"message\": \"<string>\",\n\
+          \ \"phase\": \"auth\",\n \"retryable\": true,\n \"suggested_a"
+  /v1/machines/{id}/pty/{sid}/resize:
+    post:
+      operationId: post_v1_machines_id_pty_sid_resize
+      tags:
+      - Machines
+      summary: POST /v1/machines/{id}/pty/{sid}/resize
+      x-source: https://docs.ns.rocks/api-reference/pty/resize-a-pty-session
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: sid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request POST  --url https://api.13-215-85-171.sslip.io/v1/machines/{id}/pty/{sid}/resize  --header 'Authorization: Bearer\
+          \ <token>'  --header 'Content-Type: application/json'  --data '\n{\n \"cols\": 2,\n \"rows\": 2\n}\n' 501 {\n \"error\": \"<string>\"\
+          ,\n \"code\": \"invalid_request\",\n \"error_detail\": {\n \"code\": \"unauthorized\",\n \"message\": \"<string>\",\n \"phase\": \"\
+          auth\",\n \"retryable\": true,\n \"suggested_action"
+  /v1/snapshots:
+    get:
+      operationId: get_v1_snapshots
+      tags:
+      - Snapshots
+      summary: GET /v1/snapshots
+      x-source: https://docs.ns.rocks/api-reference/machines/list-snapshots
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1SnapshotsResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request GET  --url https://api.13-215-85-171.sslip.io/v1/snapshots  --header 'Authorization: Bearer <token>' 200 401\
+          \ 501 [\n {\n \"id\": \"<string>\",\n \"machine_id\": \"<string>\",\n \"size_bytes\": 123,\n \"created_at\": \"2023-11-07T05:31:56Z\"\
+          ,\n \"metadata\": {}\n }\n] {\n \"error\": \"Missing or invalid bearer credential\",\n \"code\": \"unauthorized\",\n \"request_id\"\
+          : \"req_123\"\n} {\n \"error\": \"<string>\",\n \"code\": \"inv"
+components:
+  schemas:
+    DeleteV1KeysIdResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+    PostV1KeysIdRotateResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        key:
+          type: string
+        prefix:
+          type: string
+        name:
+          type: string
+        scope:
+          type: string
+        expires_at:
+          type: string
+          format: date-time
+    GetV1MachinesIdCodeContextsResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        language:
+          type: string
+        cwd:
+          type: string
+    PostV1MachinesIdFilesInfoResponse:
+      type: object
+      properties:
+        name:
+          type: string
+        path:
+          type: string
+        is_dir:
+          type: boolean
+        size:
+          type: integer
+        type:
+          type: string
+        mode:
+          type: string
+        permissions:
+          type: string
+        owner:
+          type: string
+        group:
+          type: string
+        modified_time:
+          type: string
+          format: date-time
+        symlink_target:
+          type: string
+    PostV1MachinesIdFilesReadResponse:
+      type: object
+      properties:
+        content:
+          type: string
+        encoding:
+          type: string
+        size:
+          type: integer
+    PostV1MachinesIdGitAddResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+    GetV1MachinesIdGitBranchResponse:
+      type: object
+      properties:
+        branches:
+          type: array
+          items:
+            type: string
+        current:
+          type: string
+    PostV1MachinesIdGitCommitResponse:
+      type: object
+      properties:
+        sha:
+          type: string
+    GetV1MachinesIdGitLogResponse:
+      type: object
+      properties:
+        commits:
+          type: array
+          items:
+            type: object
+            properties:
+              sha:
+                type: string
+              author_name:
+                type: string
+              author_email:
+                type: string
+              date:
+                type: string
+              message:
+                type: string
+    PostV1MachinesIdGitPullResponse:
+      type: object
+      properties:
+        summary:
+          type: string
+    PostV1MachinesIdGitPushResponse:
+      type: object
+      properties:
+        summary:
+          type: string
+    GetV1MachinesIdPtyResponse:
+      type: object
+      properties:
+        session_id:
+          type: string
+        pid:
+          type: integer
+        cols:
+          type: integer
+        rows:
+          type: integer
+        exec_id:
+          type: string
+    GetV1MachinesIdPtySidResponse:
+      type: object
+      properties:
+        session_id:
+          type: string
+        pid:
+          type: integer
+        cols:
+          type: integer
+        rows:
+          type: integer
+        exec_id:
+          type: string
+    GetV1SnapshotsResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        machine_id:
+          type: string
+        size_bytes:
+          type: integer
+        created_at:
+          type: string
+          format: date-time
+        metadata:
+          type: object
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security:
+- bearer: []
+tags:
+- name: Keys
+- name: Machines
+- name: Snapshots

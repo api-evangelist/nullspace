@@ -1,0 +1,81 @@
+generated: '2026-10-24'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://docs.ns.rocks/api-reference/templates/create-a-template-deprecated-blocking-convenience
+sources:
+- https://docs.ns.rocks/api-reference/templates/create-a-template-deprecated-blocking-convenience
+- https://docs.ns.rocks/changelog
+- https://docs.ns.rocks/guides/python-sdk/template-build-logging-migration
+- https://docs.ns.rocks/templates/tags-versioning
+entries:
+- breaking: false
+  highlights:
+  - 'Fixed: Published the CLI quickstart command and auth login --api-url support under a new SDK version.'
+  - The docs had advertised those commands while the published 0.1.8 wheel did not include them.
+  - Updated public setup docs to use nullspace-sdk==0.1.9.
+  date: '2026-06-06'
+- breaking: false
+  highlights:
+  - 'Added: SDK preview URL lifecycle helpers, preview readiness helpers, preview proxy target helpers, and display redaction helpers for token-bearing
+    preview URLs and header tokens.'
+  - CLI sandbox preview-url get/create/list/revoke and sandbox preview-proxy-target create commands with redacted human output, raw JSON output,
+    expiry, transport, and readiness options.
+  - Updated public setup docs to use nullspace-sdk==0.1.8.
+  date: '2026-05-19'
+- breaking: false
+  highlights:
+  - 'Added: Agent Deployment SDK and CLI support for deploying local agent projects as named jobs or services.'
+  - Bundle detection, upload, run/service management, logs, outputs, public service URLs, and deployment build-cache controls.
+  - Updated public setup docs to use nullspace-sdk==0.1.7.
+  date: '2026-05-18'
+- breaking: false
+  highlights:
+  - 'Fixed: nullspace ssh <sandbox> -- <command> disables SSH TTY allocation for scripted remote commands while preserving interactive SSH sessions.'
+  - Updated public setup docs to use nullspace-sdk==0.1.6.
+  date: '2026-05-17'
+- breaking: false
+  highlights:
+  - 'Changed: Dockerfile template builders now submit raw Dockerfile content and BuildKit contexts without the removed SDK-side COPY/ADD rewrite
+    fallback.'
+  - nullspace template build --backend native is rejected for Dockerfile builds.
+  - Updated public setup docs to use nullspace-sdk==0.1.5.
+  date: '2026-05-15'
+- breaking: false
+  highlights:
+  - Fixed default SDK installs for CLI entrypoints.
+  - 'Changed: Included the CLI runtime dependencies in the base package so nullspace and python -m nullspace.cli work from a default nullspace-sdk
+    install.'
+  - Updated public setup docs to use nullspace-sdk==0.1.4.
+  date: '2026-05-14'
+- breaking: false
+  highlights:
+  - Updated bundled agent docs for volume and OpenSSH relay workflows.
+  - 'Changed: Refreshed local-agent docs and skills for shared volume creation, mounting, direct volume file operations, uploads, downloads, and
+    cleanup.'
+  - Added local-agent OpenSSH relay guidance for CLI and SDK workflows.
+  - Updated public setup docs to use nullspace-sdk==0.1.3.
+  date: '2026-05-13'
+- breaking: false
+  highlights:
+  - Added local-agent onboarding for Claude Code and Codex.
+  - 'Changed: Added nullspace docs install to install project-local Markdown docs, skills, and MCP configuration snippets.'
+  - Bundled Nullspace agent docs and skills in the Python SDK wheel.
+  - Updated public setup docs to use nullspace-sdk==0.1.2.
+  date: '2026-05-12'
+- breaking: false
+  highlights:
+  - Fixed private-beta PTY behavior across the SDK and CLI.
+  - 'Changed: Added stable session_id PTY reconnects.'
+  - Preserved arbitrary PTY bytes with base64 payloads.
+  - Returned typed timeout results from PTY waits.
+  date: '2026-05-11'
+- breaking: false
+  highlights:
+  - First private-beta SDK package for nullspace-sdk.
+  - 'Added: Native Sandbox, AsyncSandbox, Snapshot, Template, TemplateBuild, Volume, CodeInterpreter, Monitor, and Lifecycle surfaces.'
+  - Optional nullspace CLI under the [cli] extra with auth, sandbox, volume, template, and lifecycle commands.
+  - Breaking SDK changes can still happen during the 0.x series and will be recorded here.
+  date: '2026-04-30'
+current_version: 0.1.9
+note: Versioning scheme follows the Python SDK version numbers (e.g., 0.1.x).
+docs: https://docs.ns.rocks/api-reference/templates/create-a-template-deprecated-blocking-convenience

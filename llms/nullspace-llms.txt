@@ -1,0 +1,273 @@
+# Nullspace
+
+Nullspace is composable machines for AI agents: on-demand Firecracker
+microVM compute that agents create, scale, pause, resume, and fork. It
+provides isolated environments with command execution, files, preview URLs,
+templates, volumes, desktop access, code interpreter, lifecycle events,
+snapshots, resume, and fork.
+
+This file is a generated index of the Nullspace documentation. See
+/llms-full.txt for the fuller page-by-page index.
+
+{/* GENERATED FILE - DO NOT EDIT BY HAND. */}
+{/* Rendered by tools/docs/render_llms_txt.py from docs/site/docs.json. */}
+{/* Regenerate with: uv run --project sdks/python --extra dev python tools/docs/render_llms_txt.py */}
+
+## Get started
+
+- [Welcome to Nullspace](/introduction): Composable machines for AI agents — on-demand microVM compute that agents create, scale, pause, resume, and fork.
+- [Build](/build): Choose the Nullspace primitive for isolated developer workflows.
+- [First Machine](/quickstarts/first-machine): Create a hosted Nullspace machine with Python in under five minutes.
+- [Development Environment](/quickstarts/development-environment): Set up a Nullspace Python environment across common shells.
+- [Recipes](/quickstarts/recipes): Common Nullspace tasks shown in every client — Python SDK, CLI, HTTP API, and MCP.
+- [Self-Hosted Single-Host](/quickstarts/self-hosted-single-host): Install the OSS single-host appliance, connect with the SDK or CLI, and run the operator checks.
+
+## Machines
+
+- [Machines](/machines/overview): Create isolated Linux runtimes for commands, files, services, agents, and desktop work.
+- [Create, Connect, And List Machines](/machines/create-connect-list): Launch machines, reconnect by ID, inspect metadata, and paginate lists.
+- [Machine Lifecycle](/machines/lifecycle): Understand create, exec, hibernate, resume, fork, and destroy.
+- [Create](/concepts/create): Start a new hosted machine from a template.
+- [Exec](/concepts/exec): Run commands inside a running machine.
+- [Hibernate](/concepts/hibernate): Snapshot a running machine and stop its active VM.
+- [Resume](/concepts/resume): Restore hibernated paused state into a running machine.
+- [Fork](/concepts/fork): Branch a running machine into an independent child machine.
+- [Destroy](/concepts/destroy): Tear down a machine when work is complete.
+- [Persistence](/machines/persistence): Pause machines, resume paused state, and keep long-running sessions cheap.
+- [Auto-Resume](/machines/auto-resume): Pause idle machines and wake them when SDK calls or public traffic arrive.
+- [Snapshots](/machines/snapshots): Create reusable machine snapshots and spawn independent machines from them.
+- [Fork](/machines/fork): Branch a running machine into an independent child.
+- [Metrics And Timeouts](/machines/metrics-timeouts): Inspect machine usage and configure timeout behavior.
+
+## Commands
+
+- [Commands](/commands/overview): Run shell commands, argv commands, streaming work, and background processes inside a machine.
+- [Streaming Command Output](/commands/streaming): Stream stdout and stderr from long-running commands.
+- [Run commands in background](/commands/background): Start long-running commands and manage them by PID.
+- [Processes](/commands/processes): List processes, send stdin, inspect logs, and kill work by PID.
+
+## Filesystem
+
+- [Filesystem](/filesystem): Read, write, upload, download, search, and watch machine files.
+- [Uploads](/filesystem/uploads): Upload files and directories with direct or resumable transfer.
+- [Downloads](/filesystem/downloads): Download machine files directly or through signed URLs.
+- [Search, Replace, And Watch](/filesystem/search-watch): Search file contents, match file names, replace text, and watch directories.
+
+## Code Interpreter
+
+- [Code Interpreter](/code-interpreter/overview): Run stateful notebook-style code with structured results and artifacts.
+- [Overview](/code-interpreter/analyze-data): Analyze data with stateful notebook-style code in a machine.
+- [Pre-installed libraries](/code-interpreter/pre-installed-libraries): Python data, ML, plotting, and notebook packages included in the standard code-interpreter template.
+- [Overview](/code-interpreter/charts-overview): Produce static and interactive visual outputs from code interpreter runs.
+- [Static charts](/code-interpreter/static-charts): Generate PNG and file-based chart outputs with Python plotting libraries.
+- [Interactive charts](/code-interpreter/interactive-charts): Create Plotly and other rich notebook outputs from code interpreter runs.
+- [Streaming Code Output](/code-interpreter/streaming): Stream stdout, stderr, results, artifacts, and errors from code execution.
+- [Code Contexts](/code-interpreter/contexts): Create and manage persistent code execution contexts.
+- [Runs And Artifacts](/code-interpreter/runs-artifacts): Manage async code runs and files produced by code execution.
+- [Overview](/code-interpreter/languages-overview): Choose a supported code interpreter language and kernel.
+- [Python](/code-interpreter/language-python): Run Python code interpreter cells with persistent state and rich outputs.
+- [JavaScript And TypeScript](/code-interpreter/language-javascript-typescript): Run JavaScript and TypeScript cells with the code interpreter kernels.
+- [R](/code-interpreter/language-r): Run R cells in the standard code interpreter template.
+- [Java](/code-interpreter/language-java): Run Java snippets through the code interpreter Java kernel.
+- [Bash](/code-interpreter/language-bash): Run shell-oriented notebook cells with the code interpreter Bash kernel.
+
+## Desktop
+
+- [Desktop Environments](/desktop/overview): Run GUI-capable machines for browser, desktop app, and visual-agent workflows.
+- [Desktop Automation](/desktop/automation): Automate GUI machines with screenshots, mouse, keyboard, windows, clipboard, and app launch.
+- [Managed Desktop Viewer](/desktop/viewer): Start a browser-accessible desktop viewer session.
+- [Desktop Recordings](/desktop/recordings): Record, list, download, and delete desktop session videos.
+
+## Templates
+
+- [Templates](/templates/overview): Build reusable machine environments from images, Dockerfiles, and builder steps.
+- [Quickstart](/templates/quickstart): Build a reusable template and launch a machine from it.
+- [How it works](/templates/how-it-works): Understand template builders, builds, snapshots, and machine startup.
+- [Defining template](/templates/defining): Compose template builder steps for packages, files, envs, users, and workdirs.
+- [Base image](/templates/base-images): Start templates from standard images, existing templates, custom images, or Dockerfiles.
+- [Private registries](/templates/private-registries): Pull private base images from username/password registries, GCP Artifact Registry, or AWS ECR.
+- [User and workdir](/templates/user-workdir): Set the default user, working directory, and runtime environment for template machines.
+- [Start & ready commands](/templates/start-ready): Start template services during build and snapshot them after readiness.
+- [Choose A Per-Template Kernel](/guides/template-kernel-selection): Understand default and FUSE-capable guest kernel lanes.
+- [Build](/templates/build): Build templates, wait for completion, and tune build resources.
+- [Caching](/templates/caching): Control template build cache behavior and inspect cache events.
+- [Logging](/templates/logging): Stream template build logs, reconnect to builds, and poll incrementally.
+- [Error handling](/templates/errors): Recover from build failures, upload failures, and terminal template states.
+- [Names](/templates/names): Reserve, rename, and inspect template names and namespaces.
+- [Tags & versioning](/templates/tags-versioning): Use tags, aliases, visibility, and deletion to manage template versions.
+- [Template Warm Pools](/templates/warm-pools): Keep ready capacity for a custom template and create machines from it with bounded fallback behavior.
+
+## Volumes
+
+- [Volumes](/volumes/overview): Create, mount, and manage durable shared filesystems.
+- [Managing volumes](/volumes/managing-volumes): Create, list, inspect, field-select, and delete persistent volumes.
+- [Mounting volumes](/volumes/mounting-volumes): Attach persistent volumes to machines with mount paths, subpaths, and read-only access.
+- [Read & write](/volumes/read-write): Read, write, batch-write, move, remove, chmod, search, replace, and watch volume files.
+- [Direct Volume Files](/volumes/files): Manage persistent volume files without starting a machine.
+- [File & directory metadata](/volumes/file-directory-metadata): List directories, inspect paths, check existence, search names and contents, and watch volume changes.
+- [Upload data](/volumes/upload-data): Upload files, directories, stdin streams, and resumable transfers into persistent volumes.
+- [Download data](/volumes/download-data): Download files, directories, archives, and signed URLs from persistent volumes.
+- [Volume Transfers](/volumes/transfers): Upload and download files or directories directly to persistent volumes.
+
+## Networking
+
+- [Networking And Security](/networking/overview): Expose, secure, and connect to services running inside machines.
+- [API Keys](/guides/api-keys): Use beta API keys with the SDK, CLI, and HTTP API.
+- [Preview URLs](/networking/preview-urls): Expose machine HTTP and WebSocket services through signed preview URLs.
+- [Custom Preview Proxy](/networking/custom-preview-proxy): Put your own reverse proxy in front of Nullspace preview targets without exposing edge tokens in browser URLs.
+- [Token Model](/networking/token-model): Understand Nullspace API keys, preview tokens, private traffic tokens, desktop viewer tokens, SSH credentials, and file transfer URLs.
+- [Access Control](/networking/access-control): Control preview traffic, signed URLs, outbound access, and request host masking.
+- [WebSockets](/networking/websockets): Use WebSocket channels for streaming exec, PTY, watches, lifecycle, monitor, and exposed ports.
+- [Share A Preview URL](/guides/share-machine-url): Expose a machine port through a signed temporary preview URL.
+- [Tunnel Egress Through Your Own Proxy](/guides/proxy-tunneling): Route machine egress through a Shadowsocks proxy with template primitives.
+- [Mount An S3/GCS/R2 Bucket](/guides/mount-bucket): Mount cloud buckets inside machines with FUSE-based tools.
+
+## Interactive access
+
+- [Access Overview](/access/overview): Choose PTY, SSH, or retained-machine debugging for human inspection and control.
+- [PTY Sessions](/access/pty): Create, reconnect, resize, and kill interactive terminal sessions.
+- [SSH Access](/access/ssh): Connect to a machine with OpenSSH through certificate-backed relay access.
+- [Debug Retained Machines](/access/debug-retained-machines): Inspect retained agent, service, and failed workflow machines with PTY, SSH, commands, and files.
+- [Connect To Machine](/cli/connect-to-machine): Reconnect to existing machines with CLI commands, PTY sessions, SSH, and preview URLs.
+- [Create Machine](/cli/create-machine): Create Nullspace machines from templates, snapshots, and volumes with the CLI.
+- [Execute Commands In Machine](/cli/execute-commands): Run foreground, streaming, background, and process-management commands with the CLI.
+- [Manage Files](/cli/manage-files): Read, write, upload, download, search, replace, and watch machine files from the CLI.
+- [Shutdown Running Machines](/cli/shutdown-running-machines): Pause, hibernate, or destroy running machines from the CLI.
+
+## Observability
+
+- [Observability](/observability/overview): Monitor machine lifecycle events, webhooks, and runtime metrics.
+- [Lifecycle Events](/observability/lifecycle-events): List and stream machine and snapshot lifecycle transitions.
+- [Lifecycle Webhooks](/observability/webhooks): Register webhook endpoints and inspect delivery attempts.
+- [Monitor Stream](/observability/monitor): Subscribe to live snapshot, update, metrics, process, and error events.
+
+## Overview
+
+- [Examples](/examples): Runnable, self-contained examples for every major Nullspace capability.
+
+## Machine patterns
+
+- [Code Interpreter](/examples/code-interpreter): Run stateful notebook-style code, install a package, and render a plot.
+- [Agent Workspace](/examples/agent): Clone a repository and run checks inside a machine, the way an agent would.
+- [Fork](/examples/fork): Branch a running machine and watch parent and child diverge.
+- [Template Build](/examples/template-build): Build a reusable template and create a machine from it.
+- [Template Warm Pools](/examples/template-warm-pools): Build a ready custom template, keep pool capacity warm, and create machines with explicit checkout modes.
+- [Shared Volume](/examples/shared-volume): Mount one persistent volume into two machines — one writer, one read-only reader.
+- [GitHub Actions CI/CD](/use-cases/ci-cd): Run AI-powered code review, testing, and validation in secure Nullspace machines from GitHub Actions workflows.
+
+## Networking and access
+
+- [Port Forwarding](/examples/port-forwarding): Start a web server in a machine and fetch it from outside via a signed preview URL.
+- [Custom Preview Proxy Example](/examples/custom-preview-proxy): Run a minimal customer-owned proxy in front of a Nullspace preview target.
+- [Desktop Viewer](/examples/desktop-viewer): Start a desktop machine and open a managed viewer URL.
+- [Resumable Upload](/examples/resumable-upload): Upload files and directories with progress and retry recovery.
+- [Lifecycle Webhook](/examples/lifecycle-webhook): Register lifecycle webhooks and inspect delivery attempts.
+
+## Agent deployments
+
+- [Agent Deployment Job](/examples/agent-deployment-job): Deploy a minimal local agent project as a Nullspace job.
+- [Agent Deployment Service](/examples/agent-deployment-service): Deploy a minimal local agent project as a Nullspace service.
+- [OpenAI Agents SDK Job](/examples/agent-deployment-openai-agents): Deploy an OpenAI Agents SDK app as a Nullspace job.
+- [Claude Agent SDK Job](/examples/agent-deployment-claude-agent-sdk): Deploy a Claude Agent SDK app as a Nullspace job.
+- [LangGraph Service](/examples/agent-deployment-langgraph-service): Deploy a LangGraph-backed HTTP service on Nullspace.
+- [CrewAI Job](/examples/agent-deployment-crewai-job): Deploy a CrewAI project as a Nullspace job.
+- [TypeScript Agent Service](/examples/agent-deployment-typescript-service): Deploy a Node/TypeScript HTTP service on Nullspace.
+
+## Overview
+
+- [Agents on Nullspace](/agents/overview): Four ways agents use Nullspace: local MCP tools, in-machine workspaces, managed deployments, and framework integrations.
+- [Agent Primitives](/agents/primitives): Understand the objects behind agent workspaces and Agent Deployments.
+- [Agent Deployments](/agents/deployments): Deploy a local agent project as a named Nullspace job or service.
+
+## Agent workspaces
+
+- [Codex](/agents/codex): Run OpenAI Codex in a secure Nullspace machine.
+- [Claude Code](/agents/claude-code): Run Claude Code in a secure Nullspace machine.
+- [Amp](/agents/amp): Run Amp in a secure Nullspace machine.
+- [OpenCode](/agents/opencode): Run OpenCode in a secure Nullspace machine.
+
+## Framework integrations
+
+- [OpenAI Agents SDK](/agents/openai-agents-sdk): Use Nullspace as an Agents SDK tool or deploy an Agents SDK app as a job or service.
+- [Claude Agent SDK](/agents/claude-agent-sdk): Deploy a Claude Agent SDK project as a managed Nullspace job.
+- [LangGraph](/agents/langgraph): Deploy a LangGraph-backed HTTP service on Nullspace.
+- [LangChain](/agents/langchain): Expose Nullspace machine operations as LangChain tools.
+- [CrewAI](/agents/crewai): Deploy CrewAI projects as managed Nullspace jobs.
+- [Bring Your Own Agent](/agents/bring-your-own-agent): Run a custom agent loop with Nullspace as the isolated workspace.
+
+## Local agent tooling
+
+- [Local MCP](/agents/local-mcp): Connect Codex, Claude Code, Cursor, VS Code, or another MCP client to Nullspace CLI tools.
+- [Agent Skills](/agents/agent-skills): Install Nullspace instructions for Codex and Claude Code.
+
+## Python SDK
+
+- [SDK Reference](/sdk-reference): Current Python SDK package, imports, and major surfaces.
+- [Python SDK Overview](/guides/python-sdk/overview): Install, configure, and choose the right Python SDK surface.
+- [SDK Config](/reference/config): Configuration precedence for the Nullspace SDK and CLI.
+- [Machines](/guides/python-sdk/machines): Create, inspect, configure, connect to, and clean up machines.
+- [Commands And Processes](/guides/python-sdk/commands-processes): Run commands, stream output, manage background processes, and send stdin.
+- [Filesystem](/guides/python-sdk/filesystem): Read, write, upload, download, search, and watch machine files.
+- [Code Interpreter](/guides/python-sdk/code-interpreter): Run stateful notebook-style code in a hosted machine.
+- [Templates](/guides/python-sdk/templates): Build reusable machine environments from images, Dockerfiles, and builder steps.
+- [Volumes](/guides/python-sdk/volumes): Create, mount, and manage persistent shared filesystems.
+- [Desktop And PTY](/guides/python-sdk/desktop-pty): Automate desktop sessions and interactive terminals.
+- [Python SDK Lifecycle](/guides/python-sdk/lifecycle): Read lifecycle events, stream live updates, and inspect webhook deliveries.
+- [Monitor And Snapshots](/guides/python-sdk/monitor-snapshots): Subscribe to monitor updates and manage snapshot metadata.
+- [Start And Ready Commands](/guides/python-sdk/start-ready-commands): Configure template startup commands and readiness probes.
+- [Template Error Handling](/guides/python-sdk/template-error-handling): Handle build failures, upload failures, and terminal template states.
+- [Template Build Logging Migration](/guides/python-sdk/template-build-logging-migration): Move older template build code to the current structured logging surface.
+- [Errors And Types](/guides/python-sdk/errors-types): Understand SDK error classes and stable recovery signals.
+- [CLI](/guides/python-sdk/cli): Install and use the optional nullspace command line for auth, machines, desktop automation, code execution, lifecycle, snapshots, and volumes.
+
+## Python SDK objects
+
+- [Machine](/reference/python-sdk/machine): Python SDK object reference for machine lifecycle, networking, files, and namespaces.
+- [Commands And Processes](/reference/python-sdk/commands): Python SDK object reference for running commands and managing processes.
+- [Filesystem](/reference/python-sdk/filesystem): Python SDK object reference for machine files, uploads, downloads, search, and watches.
+- [Templates](/reference/python-sdk/templates): Python SDK object reference for reusable machine templates and builds.
+- [Volumes](/reference/python-sdk/volumes): Python SDK object reference for persistent volumes and direct volume files.
+- [Code Interpreter](/reference/python-sdk/code-interpreter): Python SDK object reference for stateful code execution, contexts, runs, and artifacts.
+- [Desktop And PTY](/reference/python-sdk/desktop-pty): Python SDK object reference for desktop automation, managed viewer streams, recordings, and terminal sessions.
+- [Lifecycle And Monitor](/reference/python-sdk/lifecycle-monitor): Python SDK object reference for lifecycle events, webhooks, and live monitor streams.
+- [Errors And Types](/reference/python-sdk/errors-types): Python SDK object reference for public exception classes and typed result objects.
+
+## TypeScript SDK
+
+- [TypeScript SDK](/guides/typescript-sdk/overview): Create and drive cloud machines for AI agents from TypeScript.
+
+## CLI
+
+- [Installation](/cli/installation): Install the Nullspace CLI and verify it can reach hosted or self-hosted APIs.
+- [Authentication](/cli/authentication): Configure API credentials for the Nullspace CLI.
+- [List Machines](/cli/list-machines): List, filter, and inspect hosted Nullspace machines from the CLI.
+- [Manage Templates](/cli/manage-templates): Build, inspect, tag, rename, and delete machine templates from the CLI.
+- [Manage Volumes](/cli/manage-volumes): Create, mount, inspect, transfer, and edit persistent volumes from the CLI.
+- [CLI Reference](/reference/cli): Nullspace command line surfaces for auth, machines, files, desktop automation, code execution, lifecycle, snapshots, templates, and volumes.
+- [CLI Schema](/reference/cli-schema): Machine-readable command metadata emitted by nullspace schema.
+
+## Platform reference
+
+- [Supported Clients](/reference/clients): Choose between the Python SDK, TypeScript SDK, CLI, local MCP, and raw HTTP API.
+- [Environment Variables](/reference/env-vars): User-facing environment variables for the SDK, CLI, console, hosted beta, machine runtime, and agent secrets.
+- [WebSocket Protocol](/reference/websocket-protocol): Raw WebSocket channels for streaming exec, PTY, file watches, lifecycle, monitor, volumes, and desktop viewer.
+- [Error Codes](/error-codes): Stable CLI exit codes and JSON error-code anchors.
+- [API Error Catalog](/reference/error-codes): Machine-readable error codes from the ErrorResponse schema in specs/openapi.yaml.
+- [CLI Exit Codes](/reference/cli-exit-codes): Stable exit codes returned by the nullspace CLI, generated from the SDK source of truth.
+- [Hosted Endpoints](/reference/hosted-endpoints): Current hosted private-beta endpoint values and how examples reference them.
+- [Single-Host Release Artifacts](/reference/single-host-release-artifacts): Manifest, artifact, compatibility, install, and upgrade contract for the OSS single-host appliance.
+- [Git](/reference/git): Clone, branch, commit, push, and inspect repositories inside a machine.
+- [Account](/account): Dormant self-serve account surface for profile, quota, keys, export, and deletion.
+- [Guides](/guides/index): Task guides for the hosted Nullspace private beta.
+- [Machine Lifecycle](/guides/machine-lifecycle): Legacy guide pointer for machine lifecycle documentation.
+- [Status](/status): Private-beta service status and health-check entrypoints.
+- [Changelog](/changelog): Public release notes for the private-beta SDK and docs surface.
+
+## Overview
+
+- [API Reference](/api-reference): Use the Nullspace HTTP API directly from curl, JavaScript, or any language without a first-party SDK.
+- [API Reference Scope](/reference/api-scope): Understand which generated OpenAPI operations are public integration surfaces.
+
+## Endpoints
+
+- [API Reference](/api-reference): Use the Nullspace HTTP API directly from curl, JavaScript, or any language without a first-party SDK.

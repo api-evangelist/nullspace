@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nullspace/main/json-schema/nullspace-post-v1-machines-id-files-info-response-schema.json",
+  "title": "PostV1MachinesIdFilesInfoResponse",
+  "x-generated": "2026-10-24",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/nullspace-openapi-generated.yml#/components/schemas/PostV1MachinesIdFilesInfoResponse",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    },
+    "is_dir": {
+      "type": "boolean"
+    },
+    "size": {
+      "type": "integer"
+    },
+    "type": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string"
+    },
+    "permissions": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "group": {
+      "type": "string"
+    },
+    "modified_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "symlink_target": {
+      "type": "string"
+    }
+  }
+}

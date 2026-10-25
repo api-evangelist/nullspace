@@ -1,0 +1,17 @@
+generated: '2026-10-24'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://docs.ns.rocks/api-reference/api-keys/create-an-api-key-for-the-authenticated-user
+sources:
+- https://docs.ns.rocks/api-reference/api-keys/create-an-api-key-for-the-authenticated-user
+- https://docs.ns.rocks/api-reference/api-keys/idempotently-create-the-first-runtime-api-key
+- https://docs.ns.rocks/api-reference/api-keys/list-api-keys-for-the-authenticated-user
+- https://docs.ns.rocks/api-reference/api-keys/revoke-an-api-key
+schemes:
+- type: http-bearer
+  name: Authorization
+  evidence: Authorization string header required Supabase Auth access token passed as Bearer token
+  location: header
+  header: Authorization
+  how_to_obtain: Supabase Auth access token
+docs: https://docs.ns.rocks/api-reference/api-keys/create-an-api-key-for-the-authenticated-user

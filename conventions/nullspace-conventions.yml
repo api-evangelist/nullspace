@@ -1,0 +1,20 @@
+generated: '2026-10-24'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://docs.ns.rocks/templates/quickstart
+sources:
+- https://docs.ns.rocks/templates/quickstart
+- https://docs.ns.rocks/api-reference/api-keys/create-an-api-key-for-the-authenticated-user
+- https://docs.ns.rocks/api-reference/api-keys/idempotently-create-the-first-runtime-api-key
+- https://docs.ns.rocks/api-reference/api-keys/list-api-keys-for-the-authenticated-user
+idempotency:
+  coverage: partial
+  header: Idempotency-Key
+  evidence: POST /v1/keys and POST /v1/keys/default are described as idempotent operations.
+  scope:
+  - not enumerated on the pages read
+pagination: {}
+error_envelope: object with fields "error", "code", "request_id" (and optional nested "error_detail")
+authentication: Authorization header with Bearer token (Supabase Auth access token)
+request_tracing: Responses include a "request_id" field in error objects
+docs: https://docs.ns.rocks/templates/quickstart

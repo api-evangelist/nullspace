@@ -1,0 +1,34 @@
+generated: '2026-10-24'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://docs.ns.rocks/api-reference/machines/create-a-lifecycle-webhook
+sources:
+- https://docs.ns.rocks/api-reference/machines/create-a-lifecycle-webhook
+- https://docs.ns.rocks/api-reference/machines/delete-a-lifecycle-webhook
+- https://docs.ns.rocks/api-reference/machines/get-a-lifecycle-webhook
+- https://docs.ns.rocks/api-reference/machines/get-a-lifecycle-webhook-delivery-with-attempts
+description: Nullspace lifecycle webhooks fire for machine lifecycle operations.
+events:
+- event: create
+  description: Fires when a machine is created.
+- event: destroy
+  description: Fires when a machine is destroyed.
+- event: timeout_updated
+  description: Fires when a machine timeout is updated.
+- event: timeout_expired
+  description: Fires when a machine timeout expires.
+- event: hibernate
+  description: Fires when a machine is hibernated.
+- event: snapshot_created
+  description: Fires when a snapshot of a machine is created.
+- event: resume_from_snapshot
+  description: Fires when a machine is resumed from a snapshot.
+- event: fork
+  description: Fires when a machine is forked (cloned).
+- event: reconcile
+  description: Fires when a machine reconciliation occurs.
+delivery:
+  auth: Bearer token in Authorization header
+  signature: HMAC signature generated with the provided signing_secret
+  retries: Delivery objects include attempt_count, next_attempt_at and last_attempt_at; no explicit max‑attempts or back‑off policy is documented.
+docs: https://docs.ns.rocks/api-reference/machines/create-a-lifecycle-webhook

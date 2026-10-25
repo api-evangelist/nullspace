@@ -1,0 +1,14 @@
+generated: '2026-10-24'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://ns.rocks/pricing
+sources:
+- https://ns.rocks/pricing
+- https://docs.ns.rocks/api-reference/templates/return-a-backend-neutral-template-build-plan-without-starting-a-build
+name: Nullspace pricing
+audience: business-product
+pricing_basis: free
+plans:
+- name: Free
+  price_text: Free
+docs: https://ns.rocks/pricing

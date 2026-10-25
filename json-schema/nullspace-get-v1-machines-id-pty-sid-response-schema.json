@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/nullspace/main/json-schema/nullspace-get-v1-machines-id-pty-sid-response-schema.json",
+  "title": "GetV1MachinesIdPtySidResponse",
+  "x-generated": "2026-10-24",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/nullspace-openapi-generated.yml#/components/schemas/GetV1MachinesIdPtySidResponse",
+  "type": "object",
+  "properties": {
+    "session_id": {
+      "type": "string"
+    },
+    "pid": {
+      "type": "integer"
+    },
+    "cols": {
+      "type": "integer"
+    },
+    "rows": {
+      "type": "integer"
+    },
+    "exec_id": {
+      "type": "string"
+    }
+  }
+}

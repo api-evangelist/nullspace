@@ -1,0 +1,173 @@
+{
+  "@context": {
+    "@vocab": "https://ns.rocks/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "nullspace": "https://ns.rocks/schema#",
+    "DeleteV1KeysIdResponse": "nullspace:DeleteV1KeysIdResponse",
+    "success": {
+      "@id": "nullspace:success",
+      "@type": "xsd:boolean"
+    },
+    "PostV1KeysIdRotateResponse": "nullspace:PostV1KeysIdRotateResponse",
+    "id": {
+      "@id": "nullspace:id",
+      "@type": "xsd:string"
+    },
+    "key": {
+      "@id": "nullspace:key",
+      "@type": "xsd:string"
+    },
+    "prefix": {
+      "@id": "nullspace:prefix",
+      "@type": "xsd:string"
+    },
+    "name": {
+      "@id": "nullspace:name",
+      "@type": "xsd:string"
+    },
+    "scope": {
+      "@id": "nullspace:scope",
+      "@type": "xsd:string"
+    },
+    "expires_at": {
+      "@id": "nullspace:expires_at",
+      "@type": "xsd:dateTime"
+    },
+    "GetV1MachinesIdCodeContextsResponse": "nullspace:GetV1MachinesIdCodeContextsResponse",
+    "language": {
+      "@id": "nullspace:language",
+      "@type": "xsd:string"
+    },
+    "cwd": {
+      "@id": "nullspace:cwd",
+      "@type": "xsd:string"
+    },
+    "PostV1MachinesIdFilesInfoResponse": "nullspace:PostV1MachinesIdFilesInfoResponse",
+    "path": {
+      "@id": "nullspace:path",
+      "@type": "xsd:string"
+    },
+    "is_dir": {
+      "@id": "nullspace:is_dir",
+      "@type": "xsd:boolean"
+    },
+    "size": {
+      "@id": "nullspace:size",
+      "@type": "xsd:integer"
+    },
+    "type": {
+      "@id": "nullspace:type",
+      "@type": "xsd:string"
+    },
+    "mode": {
+      "@id": "nullspace:mode",
+      "@type": "xsd:string"
+    },
+    "permissions": {
+      "@id": "nullspace:permissions",
+      "@type": "xsd:string"
+    },
+    "owner": {
+      "@id": "nullspace:owner",
+      "@type": "xsd:string"
+    },
+    "group": {
+      "@id": "nullspace:group",
+      "@type": "xsd:string"
+    },
+    "modified_time": {
+      "@id": "nullspace:modified_time",
+      "@type": "xsd:dateTime"
+    },
+    "symlink_target": {
+      "@id": "nullspace:symlink_target",
+      "@type": "xsd:string"
+    },
+    "PostV1MachinesIdFilesReadResponse": "nullspace:PostV1MachinesIdFilesReadResponse",
+    "content": {
+      "@id": "nullspace:content",
+      "@type": "xsd:string"
+    },
+    "encoding": {
+      "@id": "nullspace:encoding",
+      "@type": "xsd:string"
+    },
+    "PostV1MachinesIdGitAddResponse": "nullspace:PostV1MachinesIdGitAddResponse",
+    "ok": {
+      "@id": "nullspace:ok",
+      "@type": "xsd:boolean"
+    },
+    "GetV1MachinesIdGitBranchResponse": "nullspace:GetV1MachinesIdGitBranchResponse",
+    "branches": {
+      "@id": "nullspace:branches",
+      "@container": "@list"
+    },
+    "current": {
+      "@id": "nullspace:current",
+      "@type": "xsd:string"
+    },
+    "PostV1MachinesIdGitCommitResponse": "nullspace:PostV1MachinesIdGitCommitResponse",
+    "sha": {
+      "@id": "nullspace:sha",
+      "@type": "xsd:string"
+    },
+    "GetV1MachinesIdGitLogResponse": "nullspace:GetV1MachinesIdGitLogResponse",
+    "commits": {
+      "@id": "nullspace:commits",
+      "@container": "@list"
+    },
+    "PostV1MachinesIdGitPullResponse": "nullspace:PostV1MachinesIdGitPullResponse",
+    "summary": {
+      "@id": "nullspace:summary",
+      "@type": "xsd:string"
+    },
+    "PostV1MachinesIdGitPushResponse": "nullspace:PostV1MachinesIdGitPushResponse",
+    "GetV1MachinesIdPtyResponse": "nullspace:GetV1MachinesIdPtyResponse",
+    "session_id": {
+      "@id": "nullspace:session_id",
+      "@type": "xsd:string"
+    },
+    "pid": {
+      "@id": "nullspace:pid",
+      "@type": "xsd:integer"
+    },
+    "cols": {
+      "@id": "nullspace:cols",
+      "@type": "xsd:integer"
+    },
+    "rows": {
+      "@id": "nullspace:rows",
+      "@type": "xsd:integer"
+    },
+    "exec_id": {
+      "@id": "nullspace:exec_id",
+      "@type": "xsd:string"
+    },
+    "GetV1MachinesIdPtySidResponse": "nullspace:GetV1MachinesIdPtySidResponse",
+    "GetV1SnapshotsResponse": "nullspace:GetV1SnapshotsResponse",
+    "machine_id": {
+      "@id": "nullspace:machine_id",
+      "@type": "xsd:string"
+    },
+    "size_bytes": {
+      "@id": "nullspace:size_bytes",
+      "@type": "xsd:integer"
+    },
+    "created_at": {
+      "@id": "nullspace:created_at",
+      "@type": "xsd:dateTime"
+    },
+    "metadata": {
+      "@id": "nullspace:metadata"
+    }
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Nullspace API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Nullspace's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-24) from openapi/_ae-authored/nullspace-openapi-generated.yml.",
+  "dcterms:created": "2026-10-24",
+  "dcterms:source": [
+    "openapi/_ae-authored/nullspace-openapi-generated.yml"
+  ]
+}
